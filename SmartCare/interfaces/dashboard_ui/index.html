@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartCare Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SmartCare AI Health Monitoring</h1>
+    </header>
+    <div class="dashboard">
+        <div class="card health">
+            <h2>Health Status</h2>
+            <ul>
+                <li><strong>Heart Rate:</strong> {{ health.heart_rate }} bpm</li>
+                <li><strong>Blood Pressure:</strong> {{ health.blood_pressure }}</li>
+                <li><strong>Temperature:</strong> {{ health.temperature }} °C</li>
+                <li><strong>Oxygen Level:</strong> {{ health.oxygen_level }}%</li>
+            </ul>
+        </div>
+        <div class="card reminders">
+            <h2>Reminders</h2>
+            <ul>
+                {% for reminder in reminders %}
+                <li>{{ reminder }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 SmartCare | Hackathon Edition</p>
+    </footer>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+            background-color: #e8f5e9;
+            color: #333;
+            }
+
+            header {
+            background-color: #388e3c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            }
+
+            .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            }
+
+            .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 45%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .card h2 {
+            margin-top: 0;
+            }
+
+            footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #388e3c;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            }
+
+            .button-container {
+            margin-top: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            }
+
+            .button-container button {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .button-container button:hover {
+            background-color: #2e7d32;
+            transform: translateY(-3px);
+            }
+
+            .icon {
+            margin-right: 10px;
+            }
+
+            .description {
+            text-align: center;
+            margin: 20px;
+            }
+
+            .image-container {
+            text-align: center;
+            margin: 20px;
+            }
+
+            .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+
+        <div class="button-container">
+            <button onclick="viewReports()">
+            <span class="icon">📊</span> View Reports
+            </button>
+            <button onclick="openSettings()">
+            <span class="icon">⚙️</span> Settings
+            </button>
+            <button onclick="showNotifications()">
+            <span class="icon">🔔</span> Notifications
+            </button>
+            <button onclick="setAlarm()">
+            <span class="icon">⏰</span> Set Alarm
+            </button>
+            <button onclick="addReminder()">
+            <span class="icon">📝</span> Add Reminder
+            </button>
+        </div>
+
+        <div class="description">
+            <p>
+            Welcome to the SmartCare Dashboard! Here you can monitor your health metrics, set reminders, and access various features to ensure your well-being. Stay healthy and informed with SmartCare.
+            </p>
+        </div>
+
+        <script>
+            function viewReports() {
+            alert("View Reports functionality coming soon!");
+            }
+
+            function openSettings() {
+            alert("Settings functionality coming soon!");
+            }
+
+            function showNotifications() {
+            alert("Notifications functionality coming soon!");
+            }
+
+            function setAlarm() {
+            const alarmTime = prompt("Enter alarm time (HH:MM):");
+            if (alarmTime) {
+                alert(`Alarm set for ${alarmTime}`);
+            }
+            }
+
+            function addReminder() {
+            const reminder = prompt("Enter your reminder:");
+            if (reminder) {
+                alert(`Reminder added: ${reminder}`);
+            }
+            }
+        </script>
